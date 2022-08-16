@@ -1,21 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package guia6_ejerciciosbase;
 
-/**
- *
- * @author Franco
- */
+import java.util.Scanner;
+
 public class Ejercicio_17 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Scanner input = new Scanner(System.in);
+        
+        int cifras, num;
+        
+        System.out.println("Ingrese el tamaño del vector: ");
+        int n = input.nextInt();
+        input.nextLine();
+        int [] vector = new int[n];
+        
+        //Se generan y guardan datos en el vector
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = (int) (Math.random()*1000+1);
+        }
+        
+        //Se leen los datos que estan en el vector y se cuentan la cantidad de cifras
+        for (int i = 0; i < vector.length; i++) {     
+            cifras= 0;   
+            while(vector[i]!=0){            
+                System.out.println("vector " + i + " : " + vector[i]);
+                vector[i] = vector[i]/10;         
+                cifras++;        
+            }
+            System.out.println("cifras: " + cifras);
+        }
+        
     }
     
 }
