@@ -18,7 +18,7 @@ public class Ejercicio_12 {
             cadena = input.nextLine();
             if (cadena.substring(0, 1).equals("X") && cadena.substring(cadena.length()-1, cadena.length()).equals("O") && cadena.length() <= 5 ){
                 contadorCorrectas++;
-            } else if (cadena.equals("&&&&&")) {
+            } else if (cadena.equals("&&&&&")) { 
                 System.out.println("Gracias por usar el programa...");
             } else {
                 contadorIncorrectas++;

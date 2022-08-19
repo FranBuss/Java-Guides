@@ -42,17 +42,16 @@ public class Ejercicio_11 {
                     System.out.println("Se sigue en el programa...");
                     System.out.println("--------------------------");
                 }
-            } else {
+            } else if (opc > 0 && opc < 5) {
                 opcionesMenu(n1, n2, opc);
             }
 
         } while (!exit);
+
     }
 
     public static void opcionesMenu(int n1, int n2, int opc) {
 
-        double resultado;
-        
         switch (opc) {
             case 1:
                 System.out.println("La suma es: " + (n1 + n2));
