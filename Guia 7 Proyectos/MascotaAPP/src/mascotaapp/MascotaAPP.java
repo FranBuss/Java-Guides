@@ -2,24 +2,19 @@ package mascotaapp;
 
 import java.util.Scanner;
 import mascotaapp.entidades.Mascota;
+import mascotaapp.servicios.ServicioMascota;
 
 public class MascotaAPP {
 
+    private final Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        ServicioMascota sm = new ServicioMascota();
 
-        Mascota m1 = new Mascota();
+        Mascota m1 = sm.crearMascota();
 
-        m1.apodo = "chiquito";
-        m1.nombre = "chori";
-        m1.tipo = "Gato";
-        m1.raza = "Chulo";
-        m1.edad = 1;
-        m1.cola = true;
-        m1.color = "blanco";
-
-        System.out.println("" + m1.nombre + " " + m1.apodo + " " + m1.tipo + " ");
+        System.out.println(m1);
 
     }
 

@@ -1,21 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package guia7_ejercicio01;
 
-/**
- *
- * @author Franco
- */
-public class Libreria {
+import guia7_ejercicio01.Entidades.Libro;
+import guia7_ejercicio01.Servicios.ServicioLibro;
+import java.util.Scanner;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Libreria {
     
+    private final Scanner input = new Scanner(System.in).useDelimiter("\n");
+
+    public static void main(String[] args) {
+
+        ServicioLibro libro = new ServicioLibro();
+        
+        Libro libro1 = libro.CrearLibro();
+        
+        System.out.println(libro1);
+        
+    }
+
 }
