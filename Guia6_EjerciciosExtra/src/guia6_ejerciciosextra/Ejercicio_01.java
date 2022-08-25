@@ -6,8 +6,8 @@ public class Ejercicio_01 {
 
     public static void main(String[] args) {
         
-        int horas = 0;
-        int dias = 0;
+        int horas;
+        int dias;
         
         Scanner input = new Scanner(System.in);
         System.out.println("Ingrese la cantidad de minutos: ");
@@ -21,7 +21,7 @@ public class Ejercicio_01 {
             horas = horas - (24*dias);
         }
    
-        System.out.println("Son " + dias + " y " + horas + "!");
+        System.out.println("Son " + dias + " dia/as y " + horas + " hora/as!");
 
     }
     

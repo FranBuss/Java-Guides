@@ -7,13 +7,13 @@ public class Ejercicio_14 {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        
+
         int moneda;
-        
+
         System.out.println("Ingrese la cantidad de euros a convertir");
-        double cantidadEuros = input.nextDouble(); 
+        double cantidadEuros = input.nextDouble();
         input.nextLine();
-        
+
         System.out.println("----------------------");
         System.out.println("--MENU DE CONVERSION--");
         System.out.println("----------------------");
@@ -22,11 +22,11 @@ public class Ejercicio_14 {
         System.out.println("      3 - Libras      ");
         System.out.println("      4 - Salir       ");
         System.out.println("----------------------");
-        
+
         do {
-        System.out.println("Ingrese una opcion de conversion: ");
-        moneda = input.nextInt();
-        input.nextLine();
+            System.out.println("Ingrese una opcion de conversion: ");
+            moneda = input.nextInt();
+            input.nextLine();
             switch (moneda) {
                 case 1:
                     System.out.println("La cantidad de €" + cantidadEuros + " euros a dolares es: " + conversion(cantidadEuros, moneda));
@@ -44,14 +44,14 @@ public class Ejercicio_14 {
                     System.out.println("--ERROR--");
                     break;
             }
-         } while(moneda != 4);
-        
+        } while (moneda != 4);
+
     }
-    
+
     public static double conversion(double cantidadEuros, int moneda) {
-        
+
         double convert = 0;
-        
+
         switch (moneda) {
             case 1:
                 //Dolares
@@ -66,9 +66,9 @@ public class Ejercicio_14 {
                 convert = cantidadEuros * 0.86;
                 break;
         }
-        
+
         return convert;
-        
+
     }
-    
+
 }
