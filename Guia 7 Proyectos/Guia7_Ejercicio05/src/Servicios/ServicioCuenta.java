@@ -24,13 +24,19 @@ public class ServicioCuenta {
     }
 
     public int Ingresar(int saldo, int deposito) {
-        saldo += deposito;
+        if (deposito > 0) {
+            saldo += deposito;
+        } else {
+            System.out.println("No se admiten negativos mostro");
+        }
         return saldo;
     }
 
     public int Retirar(int saldo, int cantRetirar) {
         if (cantRetirar > saldo) {
             saldo = 0;
+        } else if (cantRetirar < 0) {
+            System.out.println("No se puede retirar negativos :)");
         } else {
             saldo -= cantRetirar;
         }
