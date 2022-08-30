@@ -49,7 +49,7 @@ public class Ejercicio05 {
                     System.out.println("Gracias por usar el cajero :) --");
                     break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("<--ERROR-->");
             }
         } while (opc != 6);
 
