@@ -1,8 +1,7 @@
-
 package Entidades;
 
 public class Cafetera {
-    
+
     private int capacidadMaxima;
     private int capacidadActual;
 
@@ -11,7 +10,9 @@ public class Cafetera {
 
     public Cafetera(int capacidadActual) {
         this.capacidadMaxima = 1000;
-        this.capacidadActual = capacidadActual;
+        if (capacidadActual <= capacidadMaxima) {
+            this.capacidadActual = capacidadActual;
+        }
     }
 
     public int getCapacidadActual() {
@@ -21,5 +22,18 @@ public class Cafetera {
     public void setCapacidadActual(int capacidadActual) {
         this.capacidadActual = capacidadActual;
     }
-        
+
+    public int getCapacidadMaxima() {
+        return capacidadMaxima;
+    }
+
+    public void setCapacidadMaxima(int capacidadMaxima) {
+        this.capacidadMaxima = capacidadMaxima;
+    }
+
+    @Override
+    public String toString() {
+        return "Cafetera{" + "capacidadMaxima=" + capacidadMaxima + ", capacidadActual=" + capacidadActual + '}';
+    }
+
 }
