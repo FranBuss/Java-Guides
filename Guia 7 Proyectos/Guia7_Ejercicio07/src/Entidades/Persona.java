@@ -1,9 +1,7 @@
-
 package Entidades;
 
-
 public class Persona {
-    
+
     private String nombre;
     private int edad;
     private String sexo;
@@ -62,5 +60,5 @@ public class Persona {
     public void setAltura(float altura) {
         this.altura = altura;
     }
-    
+
 }
