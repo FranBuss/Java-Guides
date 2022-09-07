@@ -14,6 +14,7 @@ public class ServicioRectangulo {
         System.out.println("Ingrese la altura del rectangulo: ");
         int altura = input.nextInt();
         return new Rectangulo(base, altura);
+        
     }
 
     public float Superficie(int base, int altura) {

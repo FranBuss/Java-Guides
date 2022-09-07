@@ -49,11 +49,11 @@ public class ServicioCadena {
         System.out.println(nuevaFrase);
     }
 
-    //
+    //Cantidad de veces que se repite una letra
     public void vecesRepetido(Cadena frase, String letra) {
         int contadorRepetidos = 0;
 
-        for (int i = 0; i < frase.getLongitud() - 1; i++) {
+        for (int i = 0; i < frase.getLongitud(); i++) {
             if (frase.getFrase().substring(i, i + 1).equals(letra)) {
                 contadorRepetidos++;
             }
@@ -62,14 +62,19 @@ public class ServicioCadena {
 
     }
 
+    //Compara la longitud y devuelve un print
     public void compararLongitud(Cadena frase, String nuevaFrase) {
-        if (frase.getLongitud() > nuevaFrase.length()) {
+        if (frase.getLongitud() == nuevaFrase.length()) {
+            System.out.println("La nueva frase es de igual longitud...");
+        } else if (frase.getLongitud() > nuevaFrase.length()) {
             System.out.println("La nueva frase es de menor longitud...");
         } else {
             System.out.println("La nueva frase es de mayor longitud...");
         }
+
     }
 
+    //Concatena la frase del objeto con una nueva
     public void unirFrases(Cadena frase, String nuevaFrase) {
         String fraseConcatenada;
         fraseConcatenada = frase.getFrase().concat(nuevaFrase);
@@ -79,8 +84,8 @@ public class ServicioCadena {
     public void reemplazarA(Cadena frase, String letra) {
 
         String nuevaFrase = "";
-        for (int i = 0; i < frase.getLongitud() - 1; i++) {
-            if (frase.getFrase().substring(i, i + 1).equals(letra)) {
+        for (int i = 0; i < frase.getLongitud(); i++) {
+            if (frase.getFrase().substring(i, i + 1).equals("a")) {
                 nuevaFrase = nuevaFrase.concat(letra);
             } else {
                 nuevaFrase = nuevaFrase.concat(frase.getFrase().substring(i, i + 1));
@@ -92,7 +97,7 @@ public class ServicioCadena {
 
     public boolean contieneLetra(Cadena frase, String letra) {
         boolean bandera = false;
-        for (int i = 0; i < frase.getLongitud() - 1; i++) {
+        for (int i = 0; i < frase.getLongitud(); i++) {
             if (frase.getFrase().substring(i, i + 1).equals(letra)) {
                 bandera = true;
                 break;
