@@ -1,7 +1,7 @@
 package Entidades;
 
 public class Raices {
-    
+
     private int a;
     private int b;
     private int c;
@@ -38,7 +38,58 @@ public class Raices {
     public void setC(int c) {
         this.c = c;
     }
-    
-    
+
+    public double getDiscriminante() {
+        double discriminante = (Math.pow(b, 2) - (4 * a * c));
+        return discriminante;
+    }
+
+    public boolean tieneRaices() {
+        boolean raices;
+        if (getDiscriminante() > 0) {
+            return raices = true;
+        } else {
+            return raices = false;
+        }
+    }
+
+    public boolean tieneRaiz() {
+        boolean raiz;
+        if (getDiscriminante() == 0) {
+            return raiz = true;
+        } else {
+            return raiz = false;
+        }
+    }
+
+    public void getRaices() {
+        if (tieneRaices()) {
+            System.out.println("Tiene 2 raices");
+            double x1 = (double) ((-b + (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
+            double x2 = (double) ((-b - (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
+            System.out.println("x1 : " + x1);
+            System.out.println("x2 : " + x2);
+        }
+    }
+
+    public void getRaiz() {
+        if (tieneRaiz()) {
+            System.out.println("Tiene una raiz unica: ");
+            double unaSolucion = (double) ((-b - (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
+            System.out.println("raiz unica : " + unaSolucion);
+        }
+    }
+
+    //( -b ± √ ((b^2) - (4*a*c))) / (2*a)
+    public void calcular() {
+        if (tieneRaices()) {
+            getRaices();
+        } else if (tieneRaiz()) {
+            getRaiz();
+        } else {
+            System.out.println("No solucion");
+        }
+
+    }
 
 }
