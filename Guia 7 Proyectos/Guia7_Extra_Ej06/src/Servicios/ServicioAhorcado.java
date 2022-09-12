@@ -1,6 +1,7 @@
 package Servicios;
 
 import Entidades.Ahorcado;
+import java.util.Arrays;
 //import java.util.Arrays;
 import java.util.Scanner;
 
@@ -30,27 +31,42 @@ public class ServicioAhorcado {
 
     public void buscarLetra(String letra, Ahorcado palabra) {
         boolean letraBuscada = false;
+        int cantidadVeces = 0;
         for (int i = 0; i < palabra.getPalabra().length; i++) {
             if (palabra.getPalabra()[i].equals(letra)) {
-                letraBuscada = true;
-                break;
+                cantidadVeces++;
             }
+        }
+        if (Arrays.toString(palabra.getPalabra()).contains(letra)) {
+            letraBuscada = true;
         }
         if (letraBuscada) {
             System.out.println("La letra pertenece a la palabra...");
+            System.out.println("Y se encontro " + cantidadVeces + " veces...");
         } else {
             System.out.println("La letra no pertenece a la palabra...");
         }
     }
 
-    public boolean encontradas(String letra, Ahorcado palabra) {
-        boolean seEncontro = false;
+    public int letraRepetida(String letra, Ahorcado palabra) {
+        int cantidadVeces = 0;
         for (int i = 0; i < palabra.getPalabra().length; i++) {
             if (palabra.getPalabra()[i].equals(letra)) {
-                seEncontro = true;
+                cantidadVeces++;
             }
         }
-        return seEncontro;
+        return cantidadVeces;
+    }
+
+    public boolean encontradas(String letra, Ahorcado palabra) {
+        return Arrays.toString(palabra.getPalabra()).contains(letra);
+//        boolean seEncontro = false;
+//        for (int i = 0; i < palabra.getPalabra().length; i++) {
+//            if (palabra.getPalabra()[i].equals(letra)) {
+//                seEncontro = true;
+//            }
+//        }
+//        return seEncontro;
 
     }
 
@@ -66,7 +82,7 @@ public class ServicioAhorcado {
             longitud(palabra);
             buscarLetra(letra, palabra);
             if (encontradas(letra, palabra)) {
-                palabra.setLetrasEncontradas(palabra.getLetrasEncontradas() + 1);
+                palabra.setLetrasEncontradas(palabra.getLetrasEncontradas() + letraRepetida(letra, palabra));
             } else {
                 palabra.setIntentosRestantes(palabra.getIntentosRestantes() - 1);
             }

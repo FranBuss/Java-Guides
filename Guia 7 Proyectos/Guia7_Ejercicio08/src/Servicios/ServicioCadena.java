@@ -83,7 +83,11 @@ public class ServicioCadena {
 
     //Reemplazo una letra por A
     public void reemplazarA(Cadena frase, String letra) {
-
+        
+//        if (frase.getFrase().contains("a")) {
+//            System.out.println(frase.getFrase().replace("a", letra));
+//        }
+        
         String nuevaFrase = "";
         for (int i = 0; i < frase.getLongitud(); i++) {
             if (frase.getFrase().substring(i, i + 1).equals("a")) {
@@ -97,6 +101,9 @@ public class ServicioCadena {
     }
 
     public boolean contieneLetra(Cadena frase, String letra) {
+        
+//        return frase.getFrase().contains(letra);
+        
         boolean bandera = false;
         for (int i = 0; i < frase.getLongitud(); i++) {
             if (frase.getFrase().substring(i, i + 1).equals(letra)) {

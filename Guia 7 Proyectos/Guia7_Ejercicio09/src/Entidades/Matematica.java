@@ -30,7 +30,7 @@ public class Matematica {
     }
 
     public float getPotencia(float numeroAlto, float numeroBajo) {
-        float potencia = (float) Math.pow(numero1, numero2);
+        float potencia = (float) Math.pow(numeroAlto, numeroBajo);
         return potencia;
     }
 

@@ -15,7 +15,6 @@ public class Guia7_Extra_Ej06 {
         System.out.println(nuevaPartida);
         sa.juego(nuevaPartida);
 
-
     }
 
 }
