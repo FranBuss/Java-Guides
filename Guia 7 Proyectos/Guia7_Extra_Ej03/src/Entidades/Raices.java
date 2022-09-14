@@ -63,21 +63,32 @@ public class Raices {
     }
 
     public void getRaices() {
-        if (tieneRaices()) {
-            System.out.println("Tiene 2 raices");
-            double x1 = (double) ((-b + (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
-            double x2 = (double) ((-b - (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
-            System.out.println("x1 : " + x1);
-            System.out.println("x2 : " + x2);
-        }
+
+        System.out.println("Tiene 2 raices");
+//            double x1 = (double) ((-b + (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
+//            double x2 = (double) ((-b - (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
+//            System.out.println("x1 : " + x1);
+//            System.out.println("x2 : " + x2);
+        System.out.println("x1: " + getRaizPositiva());
+        System.out.println("x2: " + getRaizNegativa());
+
     }
 
     public void getRaiz() {
-        if (tieneRaiz()) {
-            System.out.println("Tiene una raiz unica: ");
-            double unaSolucion = (double) ((-b - (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
-            System.out.println("raiz unica : " + unaSolucion);
-        }
+
+        System.out.println("Tiene una raiz unica: ");
+//            double unaSolucion = (double) ((-b + (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
+//            System.out.println("raiz unica : " + unaSolucion);
+        System.out.println("x1: " + getRaizPositiva());
+
+    }
+
+    public int getRaizPositiva() {
+        return (int) ((-b + (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
+    }
+
+    public int getRaizNegativa() {
+        return (int) ((-b - (Math.sqrt(((Math.pow(b, 2) - (4 * a * c)))))) / (2 * a));
     }
 
     //( -b ± √ ((b^2) - (4*a*c))) / (2*a)

@@ -29,8 +29,9 @@ public class ServicioPersona {
         System.out.println("Ingrese mes: ");
         fechaNacimiento.setMonth(input.nextInt() - 1);
         System.out.println("Ingrese año: ");
-        fechaNacimiento.setYear(input.nextInt());
+        fechaNacimiento.setYear(input.nextInt() - 1900);
         return new Persona(nombre, fechaNacimiento);
+        
     }
 
     public void calcularEdad(Persona p) {

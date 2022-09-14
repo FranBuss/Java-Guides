@@ -22,7 +22,7 @@ public class Guia7_Ejercicio12 {
         System.out.println("Ingrese mes: ");
         persona2.setMonth(input.nextInt() - 1);
         System.out.println("Ingrese año");
-        persona2.setYear(input.nextInt());
+        persona2.setYear(input.nextInt() - 1900);
         
         System.out.println(sp.menorQue(p1, persona2));
         

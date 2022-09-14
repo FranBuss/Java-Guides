@@ -12,12 +12,13 @@ public class Guia7_Ejercicio11 {
         System.out.println("-------------------");
 
         Date fechaCreada = new Date();
+        
         System.out.println("Ingrese dia: ");
         fechaCreada.setDate(input.nextInt());
         System.out.println("Ingrese mes: ");
         fechaCreada.setMonth(input.nextInt() - 1);
         System.out.println("Ingrese año: ");
-        fechaCreada.setYear(input.nextInt());
+        fechaCreada.setYear(input.nextInt() - 1900);
         
         Date fechaActual = new Date();
         

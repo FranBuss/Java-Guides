@@ -50,7 +50,7 @@ public class Puntos {
     }
 
     public int distanciaPuntos(Puntos punto) {
-        int distancia = (int) Math.sqrt((Math.pow((punto.getX1() - punto.getX2()), 2) + (Math.pow((punto.getY1() - punto.getY2()), 2))));
+        int distancia = (int) Math.sqrt((Math.pow((punto.getX2() - punto.getX1()), 2) + (Math.pow((punto.getY2() - punto.getY1()), 2))));
         return distancia;
     }
 
