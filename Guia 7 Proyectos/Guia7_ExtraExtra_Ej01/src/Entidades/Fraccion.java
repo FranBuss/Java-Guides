@@ -2,51 +2,56 @@ package Entidades;
 
 public class Fraccion {
 
-    private int denominador1;
-    private int numerador1;
-    private int denominador2;
-    private int numerador2;
+    private int denominador;
+    private int numerador;
 
     public Fraccion() {
     }
 
-    public Fraccion(int denominador1, int numerador1, int denominador2, int numerador2) {
-        this.denominador1 = denominador1;
-        this.numerador1 = numerador1;
-        this.denominador2 = denominador2;
-        this.numerador2 = numerador2;
+    public Fraccion(int denominador, int numerador) {
+        this.denominador = denominador;
+        this.numerador = numerador;
     }
 
-    public int getDenominador1() {
-        return denominador1;
+    public int getDenominador() {
+        return denominador;
     }
 
-    public void setDenominador1(int denominador1) {
-        this.denominador1 = denominador1;
+    public void setDenominador(int denominador) {
+        this.denominador = denominador;
     }
 
-    public int getNumerador1() {
-        return numerador1;
+    public int getNumerador() {
+        return numerador;
     }
 
-    public void setNumerador1(int numerador1) {
-        this.numerador1 = numerador1;
+    public void setNumerador(int numerador) {
+        this.numerador = numerador;
     }
 
-    public int getDenominador2() {
-        return denominador2;
+    public Fraccion sumar(Fraccion a, Fraccion b) {
+        Fraccion c = new Fraccion();
+        c.numerador = a.numerador * b.denominador + b.numerador * a.denominador;
+        c.denominador = a.denominador * b.denominador;
+        return c;
     }
 
-    public void setDenominador2(int denominador2) {
-        this.denominador2 = denominador2;
+    public Fraccion restar(Fraccion a, Fraccion b) {
+        Fraccion c = new Fraccion();
+        c.numerador = a.numerador * b.denominador - b.numerador * a.denominador;
+        c.denominador = a.denominador * b.denominador;
+        return c;
     }
 
-    public int getNumerador2() {
-        return numerador2;
+    public Fraccion multiplicar(Fraccion a, Fraccion b) {
+        Fraccion c = new Fraccion();
+        c.numerador = a.numerador * b.numerador;
+        c.denominador = a.denominador * b.denominador;
+        return c;
     }
 
-    public void setNumerador2(int numerador2) {
-        this.numerador2 = numerador2;
+    public Fraccion dividir(Fraccion a, Fraccion b) {
+        return new Fraccion(a.numerador * b.denominador, a.denominador * b.numerador);
     }
 
 }

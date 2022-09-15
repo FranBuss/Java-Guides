@@ -10,16 +10,17 @@ public class Ej01 {
         Scanner input = new Scanner(System.in).useDelimiter("\n");
         Fraccion f1 = new Fraccion();
         System.out.println("Ingrese la primer fraccion: ");
-        f1.setDenominador1(input.nextInt());
+        f1.setDenominador(input.nextInt());
         System.out.print(" / ");
-        f1.setNumerador1(input.nextInt());
+        f1.setNumerador(input.nextInt());
+        Fraccion f2 = new Fraccion();
         System.out.println("Ingrese la segunda fraccion: ");
-        f1.setDenominador2(input.nextInt());
+        f2.setDenominador(input.nextInt());
         System.out.print(" / ");
-        f1.setNumerador2(input.nextInt());
+        f2.setNumerador(input.nextInt());
         
-        int fraccion1 = (f1.getDenominador1()/f1.getNumerador1());
-        int fraccion2 = (f1.getDenominador2()/f1.getNumerador2());
+        Fraccion c = new Fraccion();
+        
         
         do {
             System.out.println("--------------------");
@@ -32,20 +33,20 @@ public class Ej01 {
             int opc = input.nextInt();
             switch (opc) {
                 case 1:
-                    int suma = fraccion1 + fraccion2;
-                    System.out.println("La suma de las fracciones -> " + suma);
+                    c.sumar(f1, f2);
+                    System.out.println("La suma de las fracciones -> " + c);
                     break;
                 case 2:
-                    int resta = fraccion1 - fraccion2;
-                    System.out.println("La resta de las fracciones -> " + resta);
+                    c.restar(f1, f2);
+                    System.out.println("La resta de las fracciones -> " + c);
                     break;
                 case 3:
-                    int division = (fraccion1 / fraccion2);
-                    System.out.println("La division de las fracciones -> " + division);
+                    c.dividir(f1, f2);
+                    System.out.println("La division de las fracciones -> " + c);
                     break;
                 case 4:
-                    int multiplicacion = (fraccion1 * fraccion2);
-                    System.out.println("La multiplicacion de las fracciones -> " + multiplicacion);
+                    c.multiplicar(f1, f2);
+                    System.out.println("La multiplicacion de las fracciones -> " + c);
                     break;
                 default:
                     System.out.println("Te equivocaste de opcion...");;
