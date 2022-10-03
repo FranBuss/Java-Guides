@@ -13,6 +13,7 @@ public class Guia8_Ejercicio03 {
         System.out.println("--SISTEMA ESCOLAR--");
         System.out.println("Ingrese alumnos: ");
         sa.cargarAlumno();
+        sa.imprimirAlumnos();
         System.out.println("Ingrese un alumno para averiguar su nota final: ");
         String alumnoRequerido = input.nextLine();
         sa.notaFinal(alumnoRequerido);
