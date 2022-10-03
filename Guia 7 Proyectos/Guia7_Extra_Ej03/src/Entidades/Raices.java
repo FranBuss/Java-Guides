@@ -46,7 +46,7 @@ public class Raices {
 
     public boolean tieneRaices() {
         boolean raices;
-        if (getDiscriminante() > 0) {
+        if (getDiscriminante() >= 0) {
             return raices = true;
         } else {
             return raices = false;

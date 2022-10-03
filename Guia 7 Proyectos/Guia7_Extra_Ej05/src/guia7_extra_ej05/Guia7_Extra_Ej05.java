@@ -13,7 +13,7 @@ public class Guia7_Extra_Ej05 {
             "junio", "julio", "agosto", "septiembre", "octubre", "noviembre",
             "diciembre"};
 
-        String mesSecreto = meses[(int) (Math.random() * 12 + 1)];
+        String mesSecreto = meses[(int) (Math.random() * 11)];
 
         System.out.println("¡¡¡ ADIVINE EL MES SECRETO !!!");
         do {
