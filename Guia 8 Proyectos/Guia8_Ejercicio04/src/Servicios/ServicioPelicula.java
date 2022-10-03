@@ -83,7 +83,7 @@ public class ServicioPelicula {
                 listaPeliculasMayor.add(pelicula);
             }
         }
-        System.out.println("Peliculas con duracion mayor a 1 hora: ");
+        System.out.println("Peliculas con duracion mayor a 1 hora:");
         System.out.println(listaPeliculasMayor);
         System.out.println("---------------------------------------");
     }

@@ -43,6 +43,8 @@ public class Pelicula {
 
 //    public static Comparator<Pelicula> compararAutor = (Pelicula t, Pelicula t1) -> t.getAutor().compareTo(t1.getAutor());
 //    public static Comparator<Pelicula> compararTitulo = (Pelicula t, Pelicula t1) -> t.getNombrePelicula().compareTo(t1.getNombrePelicula());
+
+    //Esta de mas O_O
     Comparator<Pelicula> compararAutor = new Comparator<Pelicula>() {
         @Override
         public int compare(Pelicula p1, Pelicula p2) {
@@ -67,6 +69,5 @@ public class Pelicula {
     public String toString() {
         return "Pelicula {" + "Nombre --> " + nombrePelicula + "\n Autor --> " + autor + "\n Duracion --> " + duracion + '}' + "\n";
     }
-
 
 }
