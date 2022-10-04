@@ -6,12 +6,12 @@ public class Pelicula {
 
     private String nombrePelicula;
     private String autor;
-    private int duracion;
+    private Integer duracion;
 
     public Pelicula() {
     }
 
-    public Pelicula(String nombrePelicula, String autor, int duracion) {
+    public Pelicula(String nombrePelicula, String autor, Integer duracion) {
         this.nombrePelicula = nombrePelicula;
         this.autor = autor;
         this.duracion = duracion;
@@ -33,11 +33,11 @@ public class Pelicula {
         this.autor = autor;
     }
 
-    public int getDuracion() {
+    public Integer getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(Integer duracion) {
         this.duracion = duracion;
     }
 

@@ -1,6 +1,7 @@
 package Servicios;
 
 import Entidades.Pelicula;
+import Utilidades.Comparadores;
 import java.util.*;
 
 public class ServicioPelicula {
@@ -38,32 +39,32 @@ public class ServicioPelicula {
     }
 
     public void ordernarAutores() {
-        Comparator<Pelicula> compararAutor = (Pelicula p, Pelicula p1) -> p.getAutor().compareTo(p1.getAutor());
-        Collections.sort(listaPeliculas, compararAutor);
+//        Comparator<Pelicula> compararAutor = (Pelicula p, Pelicula p1) -> p.getAutor().compareTo(p1.getAutor());
+        Collections.sort(listaPeliculas, Comparadores.compararAutor);
         System.out.println("Peliculas en orden de autores: ");
         System.out.println(listaPeliculas);
         System.out.println("---------------------------------------");
     }
 
     public void ordernarTitulos() {
-        Comparator<Pelicula> compararTitulo = (Pelicula p, Pelicula p1) -> p.getAutor().compareTo(p1.getAutor());
-        Collections.sort(listaPeliculas, compararTitulo);
+//        Comparator<Pelicula> compararTitulo = (Pelicula p, Pelicula p1) -> p.getAutor().compareTo(p1.getAutor());
+        Collections.sort(listaPeliculas, Comparadores.compararTitulo);
         System.out.println("Peliculas en orden de Titulos: ");
         System.out.println(listaPeliculas);
         System.out.println("---------------------------------------");
     }
 
     public void ordernarDuracionAscendente() {
-        Comparator<Pelicula> compararDuracion = (Pelicula p, Pelicula p1) -> p.getDuracion() - p1.getDuracion();
-        Collections.sort(listaPeliculas, compararDuracion);
+//        Comparator<Pelicula> compararDuracion = (Pelicula p, Pelicula p1) -> p.getDuracion() - p1.getDuracion();
+        Collections.sort(listaPeliculas, Comparadores.compararDuracion);
         System.out.println("Peliculas en orden de duracion Ascendente: ");
         System.out.println(listaPeliculas);
         System.out.println("---------------------------------------");
     }
 
     public void ordernarDuracionDescendente() {
-        Comparator<Pelicula> compararDuracion = (Pelicula p, Pelicula p1) -> p1.getDuracion() - p.getDuracion();
-        Collections.sort(listaPeliculas, compararDuracion);
+//        Comparator<Pelicula> compararDuracion = (Pelicula p, Pelicula p1) -> p1.getDuracion() - p.getDuracion();
+        Collections.sort(listaPeliculas, Comparadores.compararDuracion.reversed());
         System.out.println("Peliculas en orden de duracion Descendente: ");
         System.out.println(listaPeliculas);
         System.out.println("---------------------------------------");
