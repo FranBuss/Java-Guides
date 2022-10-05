@@ -39,7 +39,9 @@ public class ServicioPelicula {
     }
 
     public void ordernarAutores() {
+        //ASI NO -->
 //        Comparator<Pelicula> compararAutor = (Pelicula p, Pelicula p1) -> p.getAutor().compareTo(p1.getAutor());
+        //ASI SI -->
         Collections.sort(listaPeliculas, Comparadores.compararAutor);
         System.out.println("Peliculas en orden de autores: ");
         System.out.println(listaPeliculas);
