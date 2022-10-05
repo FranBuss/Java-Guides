@@ -18,7 +18,7 @@ public class ServicioPais {
         while (true) {
             System.out.println("Ingrese nombre de pais para agregar: ");
             String pais = input.nextLine();
-            if (listaPaises.contains(pais)) {
+            if (existeDuplicado(pais)) {
                 System.out.println("Se encuentra repetido y no se agrega...");
             } else {
                 listaPaises.add(new Pais(pais));
@@ -30,6 +30,19 @@ public class ServicioPais {
                 break;
             }
         }
+    }
+
+    public boolean existeDuplicado(String pais) {
+        boolean existe = false;
+        
+        for (int i = 0; i < listaPaises.size(); i++) {
+            if (listaPaises.get(i).getNombrePais().equals(pais)) {
+                existe = true;
+                break;
+            }
+        }
+        
+        return existe;
     }
 
     public void removerPais() {
@@ -45,12 +58,11 @@ public class ServicioPais {
                 it.remove();
                 System.out.println("Se ah eliminado con exito...");
                 eliminado = true;
-            } else {
-                contador += 1;
+                break;
             }
         }
 
-        if (contador >= 1 && (eliminado == false)) {
+        if (eliminado == false) {
             System.out.println("No se encontro el pais");
         }
 
