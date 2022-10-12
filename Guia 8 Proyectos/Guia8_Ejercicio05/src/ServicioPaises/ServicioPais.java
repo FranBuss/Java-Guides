@@ -6,23 +6,31 @@ import java.util.*;
 
 public class ServicioPais {
 
+//    ArrayList<Pais> paisSet;
+    HashSet<Pais> paisSet;
     ArrayList<Pais> listaPaises;
     Scanner input;
 
     public ServicioPais() {
-        this.listaPaises = new ArrayList<>();
+//        this.paisSet = new ArrayList<>();
+        this.paisSet = new HashSet<>();
+        this.listaPaises = new ArrayList(paisSet);
         this.input = new Scanner(System.in).useDelimiter("\n");
+        
     }
 
     public void CrearPais() {
         while (true) {
             System.out.println("Ingrese nombre de pais para agregar: ");
             String pais = input.nextLine();
-            if (existeDuplicado(pais)) {
-                System.out.println("Se encuentra repetido y no se agrega...");
-            } else {
-                listaPaises.add(new Pais(pais));
-            }
+            
+//            if (existeDuplicado(pais)) {
+//                System.out.println("Se encuentra repetido y no se agrega...");
+//            } else {
+//                paisSet.add(new Pais(pais));
+//            }
+
+            paisSet.add(new Pais(pais));
 
             System.out.println("Desea seguir agregando paises? (S/N) ");
             String opc = input.nextLine();
@@ -32,21 +40,19 @@ public class ServicioPais {
         }
     }
 
-    public boolean existeDuplicado(String pais) {
-        boolean existe = false;
-        
-        for (int i = 0; i < listaPaises.size(); i++) {
-            if (listaPaises.get(i).getNombrePais().equals(pais)) {
-                existe = true;
-                break;
-            }
-        }
-        
-        return existe;
-    }
+//    public boolean existeDuplicado(String pais) {
+//        boolean existe = false;
+//        for (int i = 0; i < paisSet.size(); i++) {
+//            if (paisSet.get(i).getNombrePais().equals(pais)) {
+//                existe = true;
+//                break;
+//            }
+//        }
+//        return existe;
+//    }
 
     public void removerPais() {
-        Iterator<Pais> it = listaPaises.iterator();
+        Iterator<Pais> it = paisSet.iterator();
         int contador = 0;
         boolean eliminado = false;
 
@@ -73,7 +79,7 @@ public class ServicioPais {
     public void imprimirPaises() {
         Collections.sort(listaPaises, Comparadores.paisesAlfabeticamente);
         System.out.println("------------------------------");
-        System.out.println(listaPaises);
+        System.out.println(paisSet);
         System.out.println("------------------------------");
     }
 

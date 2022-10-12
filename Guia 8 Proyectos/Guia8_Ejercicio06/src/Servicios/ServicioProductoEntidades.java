@@ -1,51 +1,64 @@
 package Servicios;
 
 //import Entidades.Producto;
+import Entidades.Producto;
 import java.util.*;
+import java.util.Map.Entry;
 
-public class ServicioProducto {
+public class ServicioProductoEntidades {
 
-    HashMap<String, Integer> listaProductos;
+    HashMap<Producto, Integer> listaProductos;
 
     Scanner input;
 
-    public ServicioProducto() {
+    public ServicioProductoEntidades() {
         this.listaProductos = new HashMap<>();
         this.input = new Scanner(System.in).useDelimiter("\n");
     }
 
     public void introducirProducto() {
         System.out.println("Ingrese un Producto a la lista --> ");
-
         String producto = input.nextLine();
+        System.out.println("Ingrese el precio del producto --> ");
+        Integer precio = input.nextInt();
 
-        if (listaProductos.containsKey(producto)) {
-            System.out.println("Es duplicado pa");
-        } else {
-            System.out.println("Ingrese el precio del producto " + producto + " --> ");
-            Integer precio = input.nextInt();
-            listaProductos.put(producto, precio);
-        }
+        listaProductos.put(new Producto(producto), precio);
     }
 
     public void modificarProducto() {
         System.out.println("Ingrese el producto a modificar --> ");
         String prodMod = input.nextLine();
-        if (listaProductos.containsKey(prodMod)) {
-            System.out.println("Ingrese el precio a modificar --> ");
-            Integer precioMod = input.nextInt();
-            listaProductos.replace(prodMod, precioMod);
+        
+//        listaProductos.keySet().stream().filter((producto) -> (prodMod.equals(producto.getNombre()))).map((producto) -> {
+//            System.out.println("Ingrese el precio del producto -->");
+//            return producto;
+//        }).forEachOrdered((producto) -> {
+//            Integer nuevoPrecio = input.nextInt();
+//            listaProductos.replace(producto, nuevoPrecio);
+//        });
+
+        for (Entry<Producto, Integer> entry : listaProductos.entrySet()) {
+            if (entry.getKey().getNombre().equals(prodMod)) {
+                System.out.println("Ingrese el precio del producto --> ");
+                Integer nuevoPrecio = input.nextInt();
+                listaProductos.replace(entry.getKey(), nuevoPrecio);
+            }
         }
     }
 
     public void eliminarProducto() {
+        Iterator<Entry<Producto, Integer>> it = listaProductos.entrySet().iterator();
         System.out.println("Ingrese el producto a eliminar --> ");
         String prodDel = input.nextLine();
-        listaProductos.remove(prodDel);
+        while (it.hasNext()) {
+            if (it.next().getKey().getNombre().equals(prodDel)) {
+                it.remove();
+            }
+        }
     }
 
     public void mostrarProductos() {
-        for (Map.Entry<String, Integer> entry : listaProductos.entrySet()) {
+        for (Map.Entry<Producto, Integer> entry : listaProductos.entrySet()) {
             System.out.println("PRODUCTO --> " + entry.getKey() + " PRECIO --> " + entry.getValue());
         }
 //        listaProductos.entrySet().forEach((entry) -> {

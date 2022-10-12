@@ -45,17 +45,15 @@ public class ServicioAlumno {
     }
 
     public void notaFinal(String alumnoRequerido) {
-
         for (Alumno alumno : alumnos) {
             int sumaFinal = 0;
             if (alumno.getNombre().equals(alumnoRequerido)) {
-                for (int i = 0; i < 3 ; i++) {
+                for (int i = 0; i < 3; i++) {
                     sumaFinal += alumno.getNotas().get(i);
                 }
                 System.out.println(sumaFinal /= 3);
             }
         }
-
     }
 
 }
