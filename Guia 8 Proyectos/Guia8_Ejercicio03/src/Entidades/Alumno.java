@@ -36,5 +36,4 @@ public class Alumno {
         return "Alumno{" + "nombre=" + nombre + ", notas=" + notas + '}';
     }
     
-    
 }
