@@ -1,9 +1,11 @@
 package Servicios;
 
+import Entidades.Edificio;
 import Entidades.Polideportivo;
 import Enumations.TipoInstalacion;
+import Interfaces.CalculoEdificio;
 
-public class ServicioPolideportivo extends ServicioEdificio {
+public class ServicioPolideportivo extends ServicioEdificio implements CalculoEdificio {
 
     public Polideportivo CrearEdificio() {
         Polideportivo polideportivo = new Polideportivo();
@@ -26,15 +28,13 @@ public class ServicioPolideportivo extends ServicioEdificio {
     }
 
     @Override
-    public float calcularSuperficie() {
-        float superficie = 0;
-        return superficie;
+    public float calcularVolumen(Edificio edificio) {
+        return super.calcularVolumen(edificio);
     }
 
     @Override
-    public float calcularVolumen() {
-        float volumen = 0;
-        return volumen;
+    public float calcularSuperficie(Edificio edificio) {
+        return super.calcularSuperficie(edificio);
     }
 
 }

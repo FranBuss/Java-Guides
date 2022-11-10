@@ -31,8 +31,7 @@ public abstract class ServicioEdificio implements CalculoEdificio {
 
     @Override
     public float calcularVolumen(Edificio edificio) {
-        float volumen = 0;
-        return volumen;
+        return (edificio.getAncho() * edificio.getLargo() * edificio.getAlto());
     }
 
 }
